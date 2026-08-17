@@ -26,7 +26,7 @@ const newPool = new Pool({
   password: process.env.SPARKY_FITNESS_DB_PASSWORD,
   port: Number(process.env.SPARKY_FITNESS_DB_PORT || 5432),
   ssl: {
-    rejectUnauthorized: true,
+    rejectUnauthorized: false,
   },
   max: 10,
   idleTimeoutMillis: 30000,
@@ -46,7 +46,7 @@ const newPool = new Pool({
   password: process.env.SPARKY_FITNESS_APP_DB_PASSWORD,
   port: Number(process.env.SPARKY_FITNESS_DB_PORT || 5432),
   ssl: {
-    rejectUnauthorized: true,
+    rejectUnauthorized: false,
   },
   max: 10,
   idleTimeoutMillis: 30000,

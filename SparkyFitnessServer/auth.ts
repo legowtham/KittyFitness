@@ -78,6 +78,7 @@ const authPool = new Pool({
   password: process.env.SPARKY_FITNESS_DB_PASSWORD,
   // @ts-expect-error
   port: process.env.SPARKY_FITNESS_DB_PORT || 5432,
+  ssl: { rejectUnauthorized: false },
 });
 // Better Auth holds this pool instance for the process lifetime, so it cannot be
 // swapped or ended the way poolManager's pools are during a restore. Without a
