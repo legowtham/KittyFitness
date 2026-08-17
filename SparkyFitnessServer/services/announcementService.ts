@@ -151,6 +151,11 @@ function getLocalFallbackAnnouncement(): AnnouncementResponse {
 async function getLatestAnnouncement(
   bypassCache = false
 ): Promise<AnnouncementResponse> {
+  // Allow disabling external fetch via env var
+  if (process.env.SPARKY_FITNESS_DISABLE_ANNOUNCEMENT_FETCH === 'true') {
+    return getLocalFallbackAnnouncement();
+  }
+
   const isDev = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV;
 
   if (!bypassCache && !isDev) {
