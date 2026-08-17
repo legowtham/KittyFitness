@@ -19,17 +19,19 @@ let ownerPoolInstance: any = null;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let appPoolInstance: any = null;
 function createOwnerPoolInstance() {
-  const newPool = new Pool({
-    user: process.env.SPARKY_FITNESS_DB_USER,
-    host: process.env.SPARKY_FITNESS_DB_HOST,
-    database: process.env.SPARKY_FITNESS_DB_NAME,
-    password: process.env.SPARKY_FITNESS_DB_PASSWORD,
-    // @ts-expect-error TS(2322): Type 'string | number' is not assignable to type '... Remove this comment to see the full error message
-    port: process.env.SPARKY_FITNESS_DB_PORT || 5432,
-    max: 10,
-    idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 5000,
-  });
+const newPool = new Pool({
+  user: process.env.SPARKY_FITNESS_DB_USER,
+  host: process.env.SPARKY_FITNESS_DB_HOST,
+  database: process.env.SPARKY_FITNESS_DB_NAME,
+  password: process.env.SPARKY_FITNESS_DB_PASSWORD,
+  port: Number(process.env.SPARKY_FITNESS_DB_PORT || 5432),
+  ssl: {
+    rejectUnauthorized: true,
+  },
+  max: 10,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 5000,
+});
   newPool.on('error', (err) => {
     log('error', 'Unexpected error on idle owner client', err);
     process.exit(-1);
@@ -37,17 +39,19 @@ function createOwnerPoolInstance() {
   return newPool;
 }
 function createAppPoolInstance() {
-  const newPool = new Pool({
-    user: process.env.SPARKY_FITNESS_APP_DB_USER,
-    host: process.env.SPARKY_FITNESS_DB_HOST,
-    database: process.env.SPARKY_FITNESS_DB_NAME,
-    password: process.env.SPARKY_FITNESS_APP_DB_PASSWORD,
-    // @ts-expect-error TS(2322): Type 'string | undefined' is not assignable to typ... Remove this comment to see the full error message
-    port: process.env.SPARKY_FITNESS_DB_PORT,
-    max: 10,
-    idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 5000,
-  });
+const newPool = new Pool({
+  user: process.env.SPARKY_FITNESS_APP_DB_USER,
+  host: process.env.SPARKY_FITNESS_DB_HOST,
+  database: process.env.SPARKY_FITNESS_DB_NAME,
+  password: process.env.SPARKY_FITNESS_APP_DB_PASSWORD,
+  port: Number(process.env.SPARKY_FITNESS_DB_PORT || 5432),
+  ssl: {
+    rejectUnauthorized: true,
+  },
+  max: 10,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 5000,
+});
   newPool.on('error', (err) => {
     log('error', 'Unexpected error on idle app client', err);
     process.exit(-1);
