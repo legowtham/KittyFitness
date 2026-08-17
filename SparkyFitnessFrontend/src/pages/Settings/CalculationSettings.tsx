@@ -722,7 +722,7 @@ const CalculationSettings = () => {
               </span>{' '}
               {t(
                 'settings.calorieGoalAdjustment.adaptiveGoalDescription',
-                "The 'Gold Standard'. SparkyFitness calculates your TDEE by correlating your actual weight changes with your calorie intake over the last 35 days. It 'learns' your unique metabolism."
+                "The 'Gold Standard'. KittyFitness calculates your TDEE by correlating your actual weight changes with your calorie intake over the last 35 days. It 'learns' your unique metabolism."
               )}
             </Label>
           </div>
@@ -812,7 +812,7 @@ const CalculationSettings = () => {
               </span>{' '}
               {t(
                 'settings.calorieGoalAdjustment.tdeeGoalDescription',
-                'Like MyFitnessPal with Apple Watch. SparkyFitness projects your full-day burn by extrapolating your current device data to midnight. The adjustment = projection − TDEE.'
+                'Like MyFitnessPal with Apple Watch. KittyFitness projects your full-day burn by extrapolating your current device data to midnight. The adjustment = projection − TDEE.'
               )}
             </Label>
           </div>
@@ -1370,7 +1370,7 @@ const CalculationSettings = () => {
                     <span>
                       Note: This target is currently based on an estimated
                       activity level. After 14+ days of weight and calorie data,
-                      SparkyFitness will calculate a more personalized adaptive
+                      KittyFitness will calculate a more personalized adaptive
                       TDEE.
                     </span>
                   </p>

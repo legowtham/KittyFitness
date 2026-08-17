@@ -445,14 +445,14 @@ const MainLayout: React.FC<MainLayoutProps> = ({
               height={72}
             />
             <h1 className="text-xl sm:text-2xl font-bold text-foreground dark:text-slate-300">
-              SparkyFitness
+              KittyFitness
             </h1>
-            {!isMobile && (
+            {/* {!isMobile && (
               <>
                 <GitHubStarCounter owner="CodeWithCJ" repo="SparkyFitness" />
                 <GitHubSponsorButton owner="CodeWithCJ" />
               </>
-            )}
+            )} */}
           </div>
           <div className="flex items-center gap-2">
             <ProfileSwitcher />
@@ -608,7 +608,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                 className="cursor-pointer underline bg-transparent border-0 p-0 text-inherit font-normal text-sm"
                 onClick={onShowAboutDialog}
               >
-                SparkyFitness v{appVersion?.version ?? ''}
+                KittyFitness v{appVersion?.version ?? ''}
               </button>
               <span>•</span>
               <button
@@ -627,7 +627,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
               className="cursor-pointer underline bg-transparent border-0 p-0 text-inherit font-normal text-sm"
               onClick={onShowAboutDialog}
             >
-              SparkyFitness v{appVersion?.version ?? ''}
+              KittyFitness v{appVersion?.version ?? ''}
             </button>
             <span>•</span>
             <button

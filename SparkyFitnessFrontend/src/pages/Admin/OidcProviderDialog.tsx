@@ -243,7 +243,7 @@ export const ProviderDialog: React.FC<{
                   id="domain"
                   value={editedProvider.domain || ''}
                   onChange={handleChange}
-                  placeholder="e.g. sparkyfitness.com"
+                  placeholder="e.g. KittyFitness.com"
                   readOnly={editedProvider.is_env_configured}
                 />
                 <p className="text-xs text-muted-foreground mt-1">

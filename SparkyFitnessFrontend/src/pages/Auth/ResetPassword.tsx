@@ -118,7 +118,7 @@ const ResetPassword = () => {
               className="h-10 w-10 mr-2"
             />
             <CardTitle className="text-2xl font-bold text-gray-900 dark:text-gray-300">
-              SparkyFitness
+              KittyFitness
             </CardTitle>
           </div>
           <CardDescription>Set your new password.</CardDescription>

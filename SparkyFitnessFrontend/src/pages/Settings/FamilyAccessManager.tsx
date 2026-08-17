@@ -286,7 +286,7 @@ const FamilyAccessManager = () => {
                   disabled={!!editingAccess}
                 />
                 <p className="text-xs text-muted-foreground mt-1">
-                  They'll get access once they create a SparkyFitness account
+                  They'll get access once they create a KittyFitness account
                   (if they don't have one already)
                 </p>
               </div>
